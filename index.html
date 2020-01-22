@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ToDoApp</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-logo"><img src="img/header_logo.png" alt="ロゴ"></div>
+    <div class="header-title">HOME</div>
+    <div class="dueDate-btn">予定日</div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="radio-btn">
+        <input type="radio" name="select" value="すべて" checked>すべて
+        <input type="radio" name="select" value="作業中">作業中
+        <input type="radio" name="select" value="完了">完了
+      </div>
+      <div id="app" class="list-area">
+        <ul>
+          <li v-for="todo in todos">{{ todo }}</li>
+        </ul>
+      </div>
+      <div class="add-btn">
+        <form>
+          <input type="text">
+          <input type="submit" value="新規追加">
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

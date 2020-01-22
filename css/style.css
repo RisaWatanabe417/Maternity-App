@@ -1,0 +1,17 @@
+body {
+  font-size: 16px;
+  font-family: Verdana, sans-serif;
+}
+
+.container {
+  width: 300px;
+  margin: auto;
+}
+
+.list-area li {
+  line-height: 1.5;
+}
+
+.add-btn input[type="text"] {
+  padding: 2px;
+}
