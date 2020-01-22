@@ -5,21 +5,38 @@
     el: '#app',
     data: {
       newItem: '',
-      todos: [
-        'task1',
-        'task2',
-        'task3'
-      ]
+      todos: [{
+        title: 'タスク1',
+        isDone: false
+      }, {
+        title: 'タスク2',
+        isDone: false
+      }, {
+        title: 'タスク3',
+        isDone: true
+      }]
     },
     methods: {
       addItem: function() {
-        this.todos.push(this.newItem);
+        var item = {
+          title: this.newItem,
+          isDone: false
+        };
+        this.todos.push(item);
         this.newItem = "";
       },
       deleteItem: function(index) {
         if (confirm('リストを削除しますがよろしいですか？')) {
           this.todos.splice(index, 1);
         }
+      }
+    },
+    computed: {
+      remaining: function() {
+        var items = this.todos.filter(function(todo) {
+          return !todo.isDone;
+        });
+        return items.length;
       }
     }
   });

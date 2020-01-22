@@ -15,17 +15,23 @@
   </header>
   <main>
     <div class="container">
+      <div class="title">
+        <h1>ToDoリスト</h1>
+      </div>
       <div class="radio-btn">
         <input type="radio" name="select" value="すべて" checked>すべて
         <input type="radio" name="select" value="作業中">作業中
         <input type="radio" name="select" value="完了">完了
       </div>
       <div id="app" class="list-area">
+        <span class="info">({{ remaining }}/{{ todos.length }})</span>
         <ul>
           <li v-for="(todo, index) in todos">
-            {{ todo }}
+          <input type="checkbox" v-model="todo.isDone">
+          <span :class="{done: todo.isDone}">{{ todo.title }}</span>
           <span @click="deleteItem(index)" class="delete-btn">削除</span>
           </li>
+          <li v-show="!todos.length">ToDoリストがありません</li>
         </ul>
         <form @submit.prevent="addItem">
           <input type="text" v-model="newItem">

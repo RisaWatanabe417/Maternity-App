@@ -23,3 +23,19 @@ body {
   border-radius: 14px;
   padding: 5px 10px;
 }
+
+.list-area ul {
+  padding: 0;
+  list-style: none;
+}
+
+.list-area li > span.done {
+  text-decoration: line-through;
+  color: #bbb;
+}
+
+.info {
+  color: #bbb;
+  font-size: 14px;
+  font-weight: normal;
+}
