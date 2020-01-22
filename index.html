@@ -22,10 +22,11 @@
       </div>
       <div id="app" class="list-area">
         <ul>
-          <li v-for="todo in todos">{{ todo }}</li>
+          <li v-for="(todo, index) in todos">
+            {{ todo }}
+          <span @click="deleteItem(index)" class="delete-btn">削除</span>
+          </li>
         </ul>
-      <!-- </div>
-      <div class="add-btn"> -->
         <form @submit.prevent="addItem">
           <input type="text" v-model="newItem">
           <input type="submit" value="新規追加">

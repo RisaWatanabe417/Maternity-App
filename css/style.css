@@ -9,9 +9,17 @@ body {
 }
 
 .list-area li {
-  line-height: 1.5;
+  line-height: 2;
 }
 
 .list-area input[type="text"] {
   padding: 2px;
+}
+
+.delete-btn {
+  font-size: 14px;
+  color: #fff;
+  background: #4B7447;
+  border-radius: 14px;
+  padding: 5px 10px;
 }

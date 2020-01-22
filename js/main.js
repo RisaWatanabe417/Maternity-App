@@ -15,7 +15,12 @@
       addItem: function() {
         this.todos.push(this.newItem);
         this.newItem = "";
+      },
+      deleteItem: function(index) {
+        if (confirm('リストを削除しますがよろしいですか？')) {
+          this.todos.splice(index, 1);
+        }
       }
-    } 
+    }
   });
 })();
