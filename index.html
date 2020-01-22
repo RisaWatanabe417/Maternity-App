@@ -9,9 +9,11 @@
 </head>
 <body>
   <header>
-    <div class="header-logo"><img src="img/header_logo.png" alt="ロゴ"></div>
-    <div class="header-title">HOME</div>
-    <div class="dueDate-btn">予定日</div>
+    <div class="header-area">
+      <div class="header-logo"><img src="img/header_logo1.png" alt="ロゴ"></div>
+      <div class="header-title">HOME</div>
+      <div class="dueDate-btn">予定日</div>
+    </div>
   </header>
   <main>
     <div class="container">
@@ -24,7 +26,9 @@
         <input type="radio" name="select" value="完了">完了
       </div>
       <div id="app" class="list-area">
-        <span class="info">({{ remaining }}/{{ todos.length }})</span>
+        <span class="info">({{ remaining.length }}/{{ todos.length }})</span>
+        <!-- <button @click="purge">一括削除</button> -->
+        <span @click="purge" class="purge-btn">一括削除</span>
         <ul>
           <li v-for="(todo, index) in todos">
           <input type="checkbox" v-model="todo.isDone">

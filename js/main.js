@@ -5,16 +5,18 @@
     el: '#app',
     data: {
       newItem: '',
-      todos: [{
-        title: 'タスク1',
-        isDone: false
-      }, {
-        title: 'タスク2',
-        isDone: false
-      }, {
-        title: 'タスク3',
-        isDone: true
-      }]
+      todos: []
+    },
+    watch: {
+      todos: {
+        handler: function() {
+          localStorage.setItem('todos', JSON.stringify(this.todos));
+        },
+        deep: true
+      }
+    },
+    mounted: function() {
+      this.todos = JSON.parse(localStorage.getItem('todos')) || [];
     },
     methods: {
       addItem: function() {
@@ -29,14 +31,19 @@
         if (confirm('リストを削除しますがよろしいですか？')) {
           this.todos.splice(index, 1);
         }
+      },
+      purge: function() {
+        if (!confirm('完了したタスクを一括削除しますか？')) {
+          return;
+        }
+        this.todos = this.remaining;
       }
     },
     computed: {
       remaining: function() {
-        var items = this.todos.filter(function(todo) {
+        return this.todos.filter(function(todo) {
           return !todo.isDone;
         });
-        return items.length;
       }
     }
   });

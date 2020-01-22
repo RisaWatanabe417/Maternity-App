@@ -1,6 +1,38 @@
 body {
   font-size: 16px;
   font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+header {
+  color: #fff;
+  background: #EB8A44;
+  padding: 5px 0px;
+}
+
+.header-area {
+  width: 300px;
+  display: flex;
+  margin: auto;
+}
+
+.header-logo img {
+  width: 40px;
+  height: auto;
+}
+
+.header-title {
+  font-size: 16px;
+  margin: auto;
+}
+
+.dueDate-btn {
+  color: #EB8A44;
+  background: #fff;
+  border-radius: 17px;
+  cursor: pointer;
+  margin: auto 0;
+  padding: 5px 10px;
 }
 
 .container {
@@ -10,6 +42,7 @@ body {
 
 .list-area li {
   line-height: 2;
+  position: relative;
 }
 
 .list-area input[type="text"] {
@@ -22,6 +55,10 @@ body {
   background: #4B7447;
   border-radius: 14px;
   padding: 5px 10px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  line-height: normal;
 }
 
 .list-area ul {
@@ -38,4 +75,14 @@ body {
   color: #bbb;
   font-size: 14px;
   font-weight: normal;
+}
+
+.purge-btn {
+  font-size: 14px;
+  color: #fff;
+  background: #4B7447;
+  border-radius: 14px;
+  padding: 5px 10px;
+  cursor: pointer;
+  float: right;
 }
