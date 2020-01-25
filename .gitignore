@@ -2,3 +2,4 @@
 .gradle
 .vscode
 .project
+.DS_Store
