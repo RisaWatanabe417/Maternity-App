@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class MaternityBackendApplication
 
 fun main(args: Array<String>) {
-	runApplication<MaternityBackendApplication>(*args)
+    runApplication<MaternityBackendApplication>(*args)
 }
